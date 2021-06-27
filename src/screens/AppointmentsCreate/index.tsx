@@ -97,7 +97,7 @@ export function AppointmentsCreate() {
               </FieldBody>
             </Field>
             <Field>
-              <Label>Hora e minuto</Label>
+              <Label>Descrição</Label>
               <LimitLabel>Max 100 caracteres</LimitLabel>
             </Field>
             <TextArea
