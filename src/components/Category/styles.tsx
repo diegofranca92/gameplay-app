@@ -7,7 +7,7 @@ export const Container = styled(LinearGradient)`
 `
 
 export const Title = styled.Text`
-  font-family: ${theme.fonts.title500};
+  font-family: ${theme.fonts.title700};
   font-size: 15px;
   text-align: center;
   color: ${theme.colors.heading};

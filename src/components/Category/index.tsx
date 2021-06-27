@@ -5,10 +5,12 @@ import { theme } from './../../theme/theme'
 import discordIcon from '../../assets/discord.png'
 import { SvgProps } from 'react-native-svg'
 import { View } from 'react-native'
+import { Inter_700Bold } from '@expo-google-fonts/inter'
 
 type Props = RectButtonProps & {
   title: string
   icon: React.FC<SvgProps>
+  hasCheckBox?: boolean
   checked?: boolean
 }
 
@@ -16,9 +18,11 @@ export function Category({
   title,
   icon: Icon,
   checked = false,
+  hasCheckBox = false,
   ...props
 }: Props) {
-  const { secondary80, secondary100 } = theme.colors
+  const { secondary40, secondary50, secondary80, secondary85, secondary100 } =
+    theme.colors
 
   return (
     <RectButton
@@ -32,45 +36,49 @@ export function Category({
         marginRight: 8
       }}>
       <Container colors={[secondary80, secondary100]}>
-        <View
+        <Container
+          colors={[checked ? secondary85 : secondary50, secondary40]}
           style={[
             {
               width: 100,
               height: 116,
-              backgroundColor: theme.colors.secondary40,
               borderRadius: 8,
               alignItems: 'center',
               justifyContent: 'space-between',
-              paddingVertical: 7
+              paddingVertical: 20
             },
-            { opacity: checked ? 1 : 0.4 }
+            { opacity: checked ? 1 : 0.5 }
           ]}>
-          <View
-            style={
-              checked
-                ? {
-                    width: 10,
-                    height: 10,
-                    alignSelf: 'flex-end',
-                    marginRight: 7,
-                    borderRadius: 3,
-                    backgroundColor: theme.colors.primary
-                  }
-                : {
-                    width: 10,
-                    height: 10,
-                    alignSelf: 'flex-end',
-                    backgroundColor: theme.colors.secondary100,
-                    marginRight: 7,
-                    borderRadius: 3,
-                    borderWidth: 2,
-                    borderColor: theme.colors.secondary50
-                  }
-            }
-          />
+          {hasCheckBox && (
+            <View
+              style={
+                checked
+                  ? {
+                      position: 'absolute',
+                      width: 10,
+                      height: 10,
+                      top: 7,
+                      right: 7,
+                      borderRadius: 3,
+                      backgroundColor: theme.colors.primary
+                    }
+                  : {
+                      position: 'absolute',
+                      width: 10,
+                      height: 10,
+                      top: 7,
+                      right: 7,
+                      backgroundColor: theme.colors.secondary100,
+                      borderRadius: 3,
+                      borderWidth: 2,
+                      borderColor: theme.colors.secondary50
+                    }
+              }
+            />
+          )}
           <Icon width={48} height={48} />
           <Title>{title}</Title>
-        </View>
+        </Container>
       </Container>
     </RectButton>
   )

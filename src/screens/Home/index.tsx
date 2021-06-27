@@ -8,9 +8,11 @@ import { ListHeader } from '../../components/ListHeader'
 import { Appointment } from '../../components/Appointment'
 import { FlatList } from 'react-native'
 import { ListDivider } from '../../components/ListDivider'
+import { useNavigation } from '@react-navigation/core'
 
 export function Home() {
   const [category, setCategory] = useState('')
+  const navigation = useNavigation()
 
   const appointments = [
     {
@@ -45,6 +47,10 @@ export function Home() {
     categoryId === category ? setCategory('') : setCategory(categoryId)
   }
 
+  function handleAppointmentsDetails() {
+    navigation.navigate('AppointmentsDetails')
+  }
+
   return (
     <Wrapper>
       <Header>
@@ -60,7 +66,9 @@ export function Home() {
       <FlatList
         data={appointments}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => <Appointment data={item} />}
+        renderItem={({ item }) => (
+          <Appointment onPress={handleAppointmentsDetails} data={item} />
+        )}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
           marginTop: 24,

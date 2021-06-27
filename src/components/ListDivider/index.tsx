@@ -6,11 +6,12 @@ export function ListDivider() {
   return (
     <View
       style={{
-        width: '80%',
+        width: '78%',
         height: 1,
         backgroundColor: theme.colors.secondary40,
-        marginVertical: 21,
-        alignSelf: 'flex-end'
+        marginVertical: 31,
+        alignSelf: 'flex-end',
+        marginTop: 2
       }}
     />
   )

@@ -3,22 +3,30 @@ import { theme } from '../../theme/theme'
 
 export const Container = styled.View`
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: row;
-  padding: 0 24px;
-  margin-top: 30px;
+  align-items: center;
+`
+
+export const MemberContent = styled.View``
+export const Icon = styled.View`
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  margin-right: 9px;
+`
+
+export const Status = styled.View`
+  flex-direction: row;
+  align-items: center;
 `
 
 export const Title = styled.Text`
   font-size: 18px;
-  text-align: center;
   color: ${theme.colors.heading};
   font-family: ${theme.fonts.title700};
 `
 export const SubTitle = styled.Text`
   font-size: 13px;
-  text-align: center;
-  color: ${theme.colors.highlight};
+  color: ${theme.colors.heading};
   font-family: ${theme.fonts.text400};
 `
