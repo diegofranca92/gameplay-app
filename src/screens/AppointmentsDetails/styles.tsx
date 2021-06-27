@@ -3,15 +3,15 @@ import { theme } from '../../theme/theme'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
 export const BannerContent = styled.View`
-  padding: 20px 24px;
-  margin-bottom: ${getBottomSpace()}px;
-`
-
-export const Footer = styled.View`
   flex: 1;
   justify-content: flex-end;
   padding: 0 24px;
   margin-bottom: 30px;
+`
+
+export const Footer = styled.View`
+  padding: 20px 24px;
+  margin-bottom: ${getBottomSpace()}px;
 `
 export const Banner = styled.ImageBackground`
   width: 100%;
