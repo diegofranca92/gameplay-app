@@ -20,13 +20,7 @@ import { categories } from './../../utils/categories'
 
 import PlayerSvg from '../../assets/player.svg'
 import CalendarSvg from '../../assets/calendar.svg'
-
-export type GuildProps = {
-  id: string
-  name: string
-  icon: null
-  owner: boolean
-}
+import { GuildProps } from '../Guild'
 
 export type AppointmentProps = {
   id: string

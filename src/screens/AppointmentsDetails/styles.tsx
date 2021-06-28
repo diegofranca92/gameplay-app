@@ -25,6 +25,7 @@ export const Title = styled.Text`
 `
 export const SubTitle = styled.Text`
   font-size: 13px;
+  line-height: 21px;
   color: ${theme.colors.heading};
   font-family: ${theme.fonts.text400};
 `

@@ -75,7 +75,8 @@ export function Home() {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
           marginTop: 24,
-          marginLeft: 24
+          marginLeft: 24,
+          paddingBottom: 70
         }}
         ItemSeparatorComponent={() => <ListDivider />}
       />

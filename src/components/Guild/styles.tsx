@@ -16,12 +16,12 @@ export const Title = styled.Text`
   font-size: 18px;
   color: ${theme.colors.heading};
   font-family: ${theme.fonts.title700};
-  margin-bottom: 11px;
+  margin-bottom: 4px;
 `
 
 export const TypeUser = styled.Text`
   font-size: 13px;
   color: ${theme.colors.highlight};
   font-family: ${theme.fonts.text400};
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 `

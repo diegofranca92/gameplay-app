@@ -42,10 +42,18 @@ export function AppointmentsCreate() {
   function handleOpenModalGuilds() {
     setOpenModal(true)
   }
+  function handleCloseModalGuilds() {
+    setOpenModal(false)
+  }
 
   function handleGuildSelect(guildSelect: GuildProps) {
     setGuild(guildSelect)
     setOpenModal(false)
+  }
+
+  function handleSelectCategory(categoryId: string) {
+    // categoryId === category ? setCategory('') : setCategory(categoryId) permite selecionar e tirar a seleção
+    setCategory(categoryId)
   }
 
   return (
@@ -58,7 +66,7 @@ export function AppointmentsCreate() {
           <Label style={{ marginLeft: 24, marginTop: 24 }}>Categoria</Label>
           <CategorySelect
             categorySelected={category}
-            setCategory={setCategory}
+            setCategory={handleSelectCategory}
             hasCheckBox
           />
 
@@ -67,7 +75,7 @@ export function AppointmentsCreate() {
               <Select>
                 {guild.icon ? <GuildIcon /> : <ImageEmpty />}
                 <SelectBody>
-                  <Label>
+                  <Label style={{ marginBottom: 0 }}>
                     {guild.name ? guild.name : ' Selecione um servidor'}
                   </Label>
                 </SelectBody>
@@ -112,7 +120,7 @@ export function AppointmentsCreate() {
             <Button title='Agendar' />
           </Footer>
         </ScrollView>
-        <ModalView visible={openModal}>
+        <ModalView close={handleCloseModalGuilds} visible={openModal}>
           <Guilds handleGuildSelect={handleGuildSelect} />
         </ModalView>
       </KeyboardAvoidingView>

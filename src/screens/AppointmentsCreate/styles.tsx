@@ -59,6 +59,7 @@ export const Label = styled.Text`
   font-size: 18px;
   color: ${theme.colors.heading};
   font-family: ${theme.fonts.title700};
+  margin-bottom: 8px;
 `
 
 export const LimitLabel = styled.Text`
